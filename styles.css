@@ -1,0 +1,690 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a7a7a;
+    letter-spacing: 2px;
+}
+
+.logo-subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: -5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #1a7a7a;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f8fffe 0%, #e8f5f5 100%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.text-primary {
+    color: #1a7a7a;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: #1a7a7a;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #156666;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #1a7a7a;
+    border: 2px solid #1a7a7a;
+}
+
+.btn-outline:hover {
+    background: #1a7a7a;
+    color: white;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.medical-instruments {
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+
+.instrument-box {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1a7a7a, #2a9a9a);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(26, 122, 122, 0.3);
+}
+
+.instruments-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 150px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150"><rect x="20" y="20" width="4" height="80" fill="white"/><rect x="40" y="30" width="4" height="70" fill="white"/><rect x="60" y="25" width="4" height="75" fill="white"/><circle cx="100" cy="60" r="15" fill="none" stroke="white" stroke-width="3"/><rect x="120" y="40" width="4" height="50" fill="white"/><rect x="140" y="35" width="4" height="60" fill="white"/></svg>') no-repeat center;
+    background-size: contain;
+}
+
+/* Products Intro */
+.products-intro {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    padding: 12px 24px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-btn:hover {
+    background: #1a7a7a;
+    color: white;
+    border-color: #1a7a7a;
+}
+
+.discover-link {
+    color: #1a7a7a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Product Showcase */
+.product-showcase {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.product-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ent-bg {
+    background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+}
+
+.orthopedic-bg {
+    background: linear-gradient(135deg, #e8e8e8, #d0d0d0);
+}
+
+.gynecology-bg {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+}
+
+.ent-instruments,
+.orthopedic-instruments,
+.gynecology-instruments {
+    width: 120px;
+    height: 80px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80"><rect x="10" y="10" width="2" height="60" fill="white"/><rect x="20" y="15" width="2" height="50" fill="white"/><rect x="30" y="20" width="2" height="40" fill="white"/><circle cx="60" cy="40" r="10" fill="none" stroke="white" stroke-width="2"/><rect x="80" y="25" width="2" height="30" fill="white"/><rect x="90" y="20" width="2" height="40" fill="white"/></svg>') no-repeat center;
+    background-size: contain;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1.5rem;
+    color: #333;
+}
+
+.product-description {
+    padding: 0 1.5rem 1.5rem;
+    color: #666;
+}
+
+/* Trust Section */
+.trust-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.certifications {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.cert-logo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    color: white;
+}
+
+.cert-logo.ce {
+    background: #1a7a7a;
+}
+
+.cert-logo.fda {
+    background: #2c5aa0;
+}
+
+.cert-logo.iso {
+    background: #1a7a7a;
+}
+
+.cert-logo.astm {
+    background: #2c5aa0;
+}
+
+.cert-logo.duns {
+    background: #666;
+}
+
+/* Best Selling Products */
+.best-selling {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-item {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.product-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-img.rollator {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+}
+
+.product-img.bone-shear {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+}
+
+.product-img.needle-holder {
+    background: linear-gradient(135deg, #feca57, #ff9ff3);
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.innovation-pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pyramid-level {
+    padding: 1rem 2rem;
+    background: #1a7a7a;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pyramid-level:first-child {
+    width: 200px;
+}
+
+.pyramid-level:last-child {
+    width: 150px;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+    padding: 80px 0;
+    background: #1a7a7a;
+}
+
+.section-title.white {
+    color: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.2);
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-icon.dollar::before {
+    content: '$';
+}
+
+.feature-icon.tag::before {
+    content: '🏷';
+}
+
+.feature-icon.check::before {
+    content: '✓';
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.feature-description {
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.cta-icon {
+    flex-shrink: 0;
+}
+
+.stethoscope {
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20 20 Q30 10 40 20 Q50 30 40 40 Q30 50 20 40 Q10 30 20 20" fill="none" stroke="%231a7a7a" stroke-width="4"/><path d="M60 20 Q70 10 80 20 Q90 30 80 40 Q70 50 60 40 Q50 30 60 20" fill="none" stroke="%231a7a7a" stroke-width="4"/><path d="M40 30 L60 30" stroke="%231a7a7a" stroke-width="4"/><path d="M50 30 L50 70" stroke="%231a7a7a" stroke-width="4"/><circle cx="50" cy="75" r="8" fill="none" stroke="%231a7a7a" stroke-width="4"/></svg>') no-repeat center;
+    background-size: contain;
+}
+
+.cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a7a7a;
+}
+
+.cta-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 0;
+}
+
+.testimonials-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.author-avatar.johnson {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.author-avatar.clark {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.author-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.author-title {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.slider-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #1a7a7a;
+    background: transparent;
+    color: #1a7a7a;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.slider-btn:hover {
+    background: #1a7a7a;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .product-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .certifications {
+        gap: 1.5rem;
+    }
+    
+    .testimonials-slider {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .medical-instruments {
+        width: 300px;
+        height: 200px;
+    }
+}
